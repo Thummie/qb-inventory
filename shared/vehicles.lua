@@ -159,3 +159,12 @@ Config.TrunkInventory = {
         }
     }
 }
+
+-- This export is used to get inventory size and maxweight in other resources
+exports('GetTrunkInventory', function(carname)
+    if Config.TrunkInventory.vehicles[carname] ~= nil then
+        return Config.TrunkInventory.vehicles[carname]
+    else
+        return Config.TrunkInventory.classes[GetVehicleClassFromName(carname)]
+    end
+end)
