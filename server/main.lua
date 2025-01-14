@@ -1348,7 +1348,7 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 				secondInv.label = "Trunk-"..id
 				secondInv.maxweight = other.maxweight or 60000
 				secondInv.inventory = {}
-				secondInv.slots = Config.MaxTrunkSlots or 50
+				secondInv.slots = other.slots or 50
 				if (Trunks[id] and Trunks[id].isOpen) or (QBCore.Shared.SplitStr(id, "PLZI")[2] and (Player.PlayerData.job.name ~= "police" or Player.PlayerData.job.type ~= "leo")) then
 					secondInv.name = "none-inv"
 					secondInv.label = "Trunk-None"
